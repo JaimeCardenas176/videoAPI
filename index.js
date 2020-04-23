@@ -3,7 +3,7 @@ const { config } = require('./config/index');
 
 const app = express();
 
-const moviesApi = require('./router/movies');
+const moviesApi = require('./routes/movies');
 
 moviesApi(app);
 //app.get('/', (req, res) => {
