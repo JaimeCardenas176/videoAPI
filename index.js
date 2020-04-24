@@ -5,16 +5,9 @@ const app = express();
 
 const moviesApi = require('./routes/movies');
 
+//body parser
+app.use(express.json());
 moviesApi(app);
-//app.get('/', (req, res) => {
-    //res.send("probando server con express")
-//});
-//
-//app.get('/json', (req, res) => {
-//    res.json({
-//        hello: 'world'
-//    });
-//});
 
 app.listen(config.port, () => {
     console.log(`Listening on http://localhost:${config.port}`);
