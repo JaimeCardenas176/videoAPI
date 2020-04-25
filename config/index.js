@@ -1,7 +1,8 @@
 require('dotenv').config();
 
 const config = {
-    dev: process.env.NODE_ENV !== 'production',
+    //cuando configuras una variable de entorno en windows mete carateres especiales por eso es necesario trim
+    dev: process.env.NODE_ENV.trim() !== 'production',
     port: process.env.PORT || 3000,
     cors: process.env.CORS,
     dbUser: process.env.DB_USER,
