@@ -1000,6 +1000,22 @@ const moviesMock = [
 { "id": "4513b568-b0b5-4132-a5a4-89d31d79645a", "title": "Clubland (a.k.a. Introducing the Dwights)", "year": 1993, "cover": "http://dummyimage.com/214x222.bmp/dddddd/000000", "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.", "duration": 79, "contentRaiting": "R", "source": "http://narod.ru/purus/sit/amet/nulla/quisque/arcu/libero.jpg?augue=mauris&vestibulum=eget&rutrum=massa&rutrum=tempor&neque=convallis&aenean=nulla&auctor=neque&gravida=libero&sem=convallis&praesent=eget&id=eleifend&massa=luctus&id=ultricies&nisl=eu&venenatis=nibh&lacinia=quisque&aenean=id&sit=justo&amet=sit&justo=amet&morbi=sapien&ut=dignissim&odio=vestibulum&cras=vestibulum&mi=ante&pede=ipsum&malesuada=primis&in=in", "tags": ["Action|Drama", "Drama|Fantasy", "Documentary", "(no genres listed)"] },
 { "id": "a92709b6-c018-4178-a7b0-0bfaaf58e220", "title": "Wrong Turn", "year": 2000, "cover": "http://dummyimage.com/193x163.bmp/cc0000/ffffff", "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.", "duration": 77, "contentRaiting": "R", "source": "https://shinystat.com/cursus/urna/ut/tellus/nulla.jpg?integer=volutpat&pede=erat&justo=quisque&lacinia=erat&eget=eros&tincidunt=viverra&eget=eget&tempus=congue&vel=eget&pede=semper&morbi=rutrum&porttitor=nulla&lorem=nunc&id=purus&ligula=phasellus&suspendisse=in&ornare=felis&consequat=donec&lectus=semper", "tags": ["Adventure|Animation|Children|Comedy", "Animation|Children", "Drama"] }];
 
+function filteredMoviesMock(tag) {
+    return moviesMock.filter(movie => movie.tags.includes(tag));
+}
+
+class MoviesServiceMock {
+    async getMovies() {
+        return Promise.resolve(moviesMock);
+    }
+
+    async createMovie() {
+        return Promise.resolve(moviesMock[0]);
+    }
+}
+
 module.exports = {
-    moviesMock
+    moviesMock,
+    filteredMoviesMock,
+    MoviesServiceMock
 };

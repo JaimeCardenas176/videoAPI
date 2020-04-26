@@ -1,5 +1,5 @@
 //const { moviesMock } = require('../utils/mocks/movies');
-const MongoLib = require('../lib/mongo')
+const MongoLib = require('../lib/mongoLib')
 
 class MoviesService {
     constructor() {

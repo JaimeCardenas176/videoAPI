@@ -36,7 +36,6 @@ function moviesApi(app) {
                 message: 'movies retrieved'
             });
         } catch (err) {
-            console.log('hola1234')
             next(err);
         }
     });
